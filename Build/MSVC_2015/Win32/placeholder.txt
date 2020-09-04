@@ -1,1 +1,0 @@
-iLOG3\Build\MSVC_2015\Win32

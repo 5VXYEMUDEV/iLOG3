@@ -84,6 +84,9 @@ extern "C" {
 #define PROCESSID	(unsigned long)GetCurrentProcessId()
 #define THREADID	(unsigned long)GetCurrentThreadId()
 #define NEWLINE		"\r\n"
+#ifndef pid_t
+#   define pid_t    int
+#endif
 #endif
 
 /* 日志等级 */

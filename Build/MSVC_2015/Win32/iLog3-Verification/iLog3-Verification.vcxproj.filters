@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Utility">
+      <UniqueIdentifier>{e9010800-4bf9-498a-a7ac-5ecf60c2b920}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utility\Common">
+      <UniqueIdentifier>{a20f7b8c-c911-47af-a5a8-0fa59047b8fe}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\Code\Utilities\iLog3-Verification\iLog3-Verification.c">
+      <Filter>Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Code\Platform\Win32\Utilities\Common\stdafx.c">
+      <Filter>Utility\Common</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\Code\Platform\Win32\Utilities\Common\stdafx.h">
+      <Filter>Utility\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Code\Platform\Win32\Utilities\Common\targetver.h">
+      <Filter>Utility\Common</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
