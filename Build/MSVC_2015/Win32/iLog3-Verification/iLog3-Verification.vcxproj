@@ -177,11 +177,13 @@
   <ItemGroup>
     <ClCompile Include="..\..\..\..\Code\Platform\Win32\Utilities\Common\stdafx.c" />
     <ClCompile Include="..\..\..\..\Code\Utilities\iLog3-Verification\iLog3-Verification.c" />
+    <ClCompile Include="..\..\..\..\Code\Utilities\iLog3-Verification\TEST_hello.c" />
     <ClCompile Include="..\..\..\..\Code\Utilities\iLog3-Verification\TEST_logs.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\..\Code\Platform\Win32\Utilities\Common\stdafx.h" />
     <ClInclude Include="..\..\..\..\Code\Platform\Win32\Utilities\Common\targetver.h" />
+    <ClInclude Include="..\..\..\..\Code\Utilities\iLog3-Verification\TEST_hello.h" />
     <ClInclude Include="..\..\..\..\Code\Utilities\iLog3-Verification\TEST_logs.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

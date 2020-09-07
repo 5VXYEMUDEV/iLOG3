@@ -6,9 +6,10 @@
 #   endif
 #endif
 
+#include "TEST_hello.h"
 #include "TEST_logs.h"
 
 int main()
 {
-    return -test_logs();
+    return test_logs();
 }
