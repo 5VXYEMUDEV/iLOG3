@@ -6,9 +6,6 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Win32", "Win32", "{68A22E4D-8446-4050-A4F0-D8D11960054E}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "iLog3-Verification", "Win32\iLog3-Verification\iLog3-Verification.vcxproj", "{247EBEA1-6767-45F0-95CE-6767DFC90E68}"
-	ProjectSection(ProjectDependencies) = postProject
-		{11E40234-00CF-4BD2-BB1B-B5087ADC7A07} = {11E40234-00CF-4BD2-BB1B-B5087ADC7A07}
-	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "iLog3-DynamicLib", "Win32\iLog3-DynamicLib\iLog3-DynamicLib.vcxproj", "{11E40234-00CF-4BD2-BB1B-B5087ADC7A07}"
 EndProject
