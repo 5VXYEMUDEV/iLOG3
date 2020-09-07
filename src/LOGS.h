@@ -64,7 +64,7 @@ _WINDLL_FUNC int WriteWarnHexLogs( LOGS *g , char *c_filename , long c_fileline 
 _WINDLL_FUNC int WriteErrorHexLogs( LOGS *g , char *c_filename , long c_fileline , char *buffer , long buflen , char *format , ... );
 _WINDLL_FUNC int WriteFatalHexLogs( LOGS *g , char *c_filename , long c_fileline , char *buffer , long buflen , char *format , ... );
 
-#if ( defined __STDC_VERSION__ ) && ( __STDC_VERSION__ >= 199901 )
+#if (( defined __STDC_VERSION__ ) && ( __STDC_VERSION__ >= 199901 )) || (( defined _MSC_VER ) && ( _MSC_VER >= _MSC_VER_MINVERSION ))
 
 /* 写日志集合函数的可变参数宏 */ /* output log collection macros */
 #define WRITELOGS( _g_ , _log_level_ , ... )	WriteLevelLogs( _g_ , __FILE__ , __LINE__ , _log_level_ , __VA_ARGS__ );
@@ -144,7 +144,7 @@ _WINDLL_FUNC int WriteWarnHexLogsG( char *c_filename , long c_fileline , char *b
 _WINDLL_FUNC int WriteErrorHexLogsG( char *c_filename , long c_fileline , char *buffer , long buflen , char *format , ... );
 _WINDLL_FUNC int WriteFatalHexLogsG( char *c_filename , long c_fileline , char *buffer , long buflen , char *format , ... );
 
-#if ( defined __STDC_VERSION__ ) && ( __STDC_VERSION__ >= 199901 )
+#if (( defined __STDC_VERSION__ ) && ( __STDC_VERSION__ >= 199901 )) || (( defined _MSC_VER ) && ( _MSC_VER >= _MSC_VER_MINVERSION ))
 
 /* 写日志集合函数的可变参数宏（基于线程本地存储的缺省日志句柄的函数集合版本） */ /* output log collection macros for TLS */
 #define WRITELOGSG( _log_level_ , ... )	WriteLevelLogsG( __FILE__ , __LINE__ , _log_level_ , __VA_ARGS__ );

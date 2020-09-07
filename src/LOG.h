@@ -46,7 +46,7 @@ extern "C" {
 #include <sys/types.h>
 #include <errno.h>
 
-#if ( defined __STDC_VERSION__ ) && ( __STDC_VERSION__ >= 199901 )
+#if (( defined __STDC_VERSION__ ) && ( __STDC_VERSION__ >= 199901 )) || (( defined _MSC_VER ) && ( _MSC_VER >= _MSC_VER_MINVERSION ))
 struct tm *localtime_r(const time_t *timep, struct tm *result);
 #endif
 
@@ -160,7 +160,7 @@ _WINDLL_FUNC int WriteWarnHexLog( LOG *g , char *c_filename , long c_fileline , 
 _WINDLL_FUNC int WriteErrorHexLog( LOG *g , char *c_filename , long c_fileline , char *buffer , long buflen , char *format , ... );
 _WINDLL_FUNC int WriteFatalHexLog( LOG *g , char *c_filename , long c_fileline , char *buffer , long buflen , char *format , ... );
 
-#if ( defined __STDC_VERSION__ ) && ( __STDC_VERSION__ >= 199901 )
+#if (( defined __STDC_VERSION__ ) && ( __STDC_VERSION__ >= 199901 )) || (( defined _MSC_VER ) && ( _MSC_VER >= _MSC_VER_MINVERSION ))
 
 /* 写日志函数的可变参数宏 */ /* output log macros */
 #define WRITELOG( _g_ , _log_level_ , ... )	WriteLevelLog( _g_ , __FILE__ , __LINE__ , _log_level_ , __VA_ARGS__ );
@@ -246,7 +246,7 @@ _WINDLL_FUNC int WriteWarnHexLogG( char *c_filename , long c_fileline , char *bu
 _WINDLL_FUNC int WriteErrorHexLogG( char *c_filename , long c_fileline , char *buffer , long buflen , char *format , ... );
 _WINDLL_FUNC int WriteFatalHexLogG( char *c_filename , long c_fileline , char *buffer , long buflen , char *format , ... );
 
-#if ( defined __STDC_VERSION__ ) && ( __STDC_VERSION__ >= 199901 )
+#if (( defined __STDC_VERSION__ ) && ( __STDC_VERSION__ >= 199901 )) || (( defined _MSC_VER ) && ( _MSC_VER >= _MSC_VER_MINVERSION ))
 
 /* 写日志函数的可变参数宏（基于线程本地存储的缺省日志句柄的函数集合版本） */  /* output log macros for TLS */
 #define WRITELOGG( _log_level_ , ... )	WriteLevelLogG( __FILE__ , __LINE__ , _log_level_ , __VA_ARGS__ );
