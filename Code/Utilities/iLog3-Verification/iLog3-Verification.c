@@ -7,9 +7,10 @@
 #endif
 
 #include "TEST_hello.h"
+#include "TEST_hello2.h"
 #include "TEST_logs.h"
 
 int main()
 {
-    return test_logs();
+    return test_hello2();
 }
