@@ -37,6 +37,16 @@
 extern "C" {
 #endif
 
+#if ( defined _WIN32 )
+#ifndef _WINDLL_FUNC
+#define _WINDLL_FUNC		_declspec(dllexport)
+#endif
+#elif ( defined __unix ) || ( defined _AIX ) || ( defined __linux__ ) || ( defined __hpux )
+#ifndef _WINDLL_FUNC
+#define _WINDLL_FUNC
+#endif
+#endif
+
 /* 公共宏 */
 #ifndef MAXLEN_FILENAME
 #define MAXLEN_FILENAME			256
@@ -100,11 +110,11 @@ extern "C" {
 #define LOGCLEVEL_NOLOG		6
 
 /* 设置日志属性 */
-void SetLogcFile( char *format , ... );
-void SetLogcFileV( char *format , va_list valist );
-char *GetLogcFilePtr();
-void SetLogcLevel( int log_level );
-int GetLogcLevel();
+_WINDLL_FUNC void SetLogcFile( char *format , ... );
+_WINDLL_FUNC void SetLogcFileV( char *format , va_list valist );
+_WINDLL_FUNC char *GetLogcFilePtr();
+_WINDLL_FUNC void SetLogcLevel( int log_level );
+_WINDLL_FUNC int GetLogcLevel();
 
 #define LOGC_MAXLEN_CUST_LABEL	64
 

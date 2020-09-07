@@ -37,6 +37,16 @@
 extern "C" {
 #endif
 
+#if ( defined _WIN32 )
+#ifndef _WINDLL_FUNC
+#define _WINDLL_FUNC		_declspec(dllexport)
+#endif
+#elif ( defined __unix ) || ( defined _AIX ) || ( defined __linux__ ) || ( defined __hpux )
+#ifndef _WINDLL_FUNC
+#define _WINDLL_FUNC
+#endif
+#endif
+
 /* 公共宏 */
 #ifndef MAXLEN_FILENAME
 #define MAXLEN_FILENAME			256
@@ -100,11 +110,11 @@ extern "C" {
 #define LOGCLEVEL_NOLOG		6
 
 /* 设置日志属性 */
-void SetLogcFile( char *format , ... );
-void SetLogcFileV( char *format , va_list valist );
-char *GetLogcFilePtr();
-void SetLogcLevel( int log_level );
-int GetLogcLevel();
+_WINDLL_FUNC void SetLogcFile( char *format , ... );
+_WINDLL_FUNC void SetLogcFileV( char *format , va_list valist );
+_WINDLL_FUNC char *GetLogcFilePtr();
+_WINDLL_FUNC void SetLogcLevel( int log_level );
+_WINDLL_FUNC int GetLogcLevel();
 
 #define LOGC_MAXLEN_CUST_LABEL	64
 
@@ -169,21 +179,21 @@ int WriteHexLogcBase( int log_level , char *c_filename , long c_fileline , char 
 
 #else
 
-int WriteLevelLogc( int log_level , char *c_filename , long c_fileline , char *format , ... );
-int WriteFatalLogc( char *c_filename , long c_fileline , char *format , ... );
-int WriteErrorLogc( char *c_filename , long c_fileline , char *format , ... );
-int WriteWarnLogc( char *c_filename , long c_fileline , char *format , ... );
-int WriteNoticeLogc( char *c_filename , long c_fileline , char *format , ... );
-int WriteInfoLogc( char *c_filename , long c_fileline , char *format , ... );
-int WriteDebugLogc( char *c_filename , long c_fileline , char *format , ... );
+_WINDLL_FUNC int WriteLevelLogc( int log_level , char *c_filename , long c_fileline , char *format , ... );
+_WINDLL_FUNC int WriteFatalLogc( char *c_filename , long c_fileline , char *format , ... );
+_WINDLL_FUNC int WriteErrorLogc( char *c_filename , long c_fileline , char *format , ... );
+_WINDLL_FUNC int WriteWarnLogc( char *c_filename , long c_fileline , char *format , ... );
+_WINDLL_FUNC int WriteNoticeLogc( char *c_filename , long c_fileline , char *format , ... );
+_WINDLL_FUNC int WriteInfoLogc( char *c_filename , long c_fileline , char *format , ... );
+_WINDLL_FUNC int WriteDebugLogc( char *c_filename , long c_fileline , char *format , ... );
 
-int WriteLevelHexLogc( int log_level , char *c_filename , long c_fileline , char *buf , long buflen , char *format , ... );
-int WriteFatalHexLogc( char *c_filename , long c_fileline , char *buf , long buflen , char *format , ... );
-int WriteErrorHexLogc( char *c_filename , long c_fileline , char *buf , long buflen , char *format , ... );
-int WriteWarnHexLogc( char *c_filename , long c_fileline , char *buf , long buflen , char *format , ... );
-int WriteNoticeHexLogc( char *c_filename , long c_fileline , char *buf , long buflen , char *format , ... );
-int WriteInfoHexLogc( char *c_filename , long c_fileline , char *buf , long buflen , char *format , ... );
-int WriteDebugHexLogc( char *c_filename , long c_fileline , char *buf , long buflen , char *format , ... );
+_WINDLL_FUNC int WriteLevelHexLogc( int log_level , char *c_filename , long c_fileline , char *buf , long buflen , char *format , ... );
+_WINDLL_FUNC int WriteFatalHexLogc( char *c_filename , long c_fileline , char *buf , long buflen , char *format , ... );
+_WINDLL_FUNC int WriteErrorHexLogc( char *c_filename , long c_fileline , char *buf , long buflen , char *format , ... );
+_WINDLL_FUNC int WriteWarnHexLogc( char *c_filename , long c_fileline , char *buf , long buflen , char *format , ... );
+_WINDLL_FUNC int WriteNoticeHexLogc( char *c_filename , long c_fileline , char *buf , long buflen , char *format , ... );
+_WINDLL_FUNC int WriteInfoHexLogc( char *c_filename , long c_fileline , char *buf , long buflen , char *format , ... );
+_WINDLL_FUNC int WriteDebugHexLogc( char *c_filename , long c_fileline , char *buf , long buflen , char *format , ... );
 
 #endif
 

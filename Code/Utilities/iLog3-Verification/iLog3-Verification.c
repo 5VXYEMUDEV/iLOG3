@@ -12,5 +12,5 @@
 
 int main()
 {
-    return test_hello2();
+    return test_logs();
 }

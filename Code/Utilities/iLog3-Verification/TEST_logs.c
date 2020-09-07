@@ -15,6 +15,7 @@ int test_logs()
 
     char		buffer[64 + 1] = "";
     long		buflen = sizeof(buffer) - 1;
+    int i;
 
     int		nret;
 
@@ -40,6 +41,8 @@ int test_logs()
 
     AddLogToLogs(gs, "STDERR", CreateLogHandle());
 
+    SetLogsHandleG(gs);
+
     g = GetLogFromLogs(gs, "STDERR");
     if (g == NULL)
     {
@@ -64,17 +67,22 @@ int test_logs()
 
     printf("遍历日志句柄集合完成\n");
 
-    DEBUGLOGS(gs, "hello iLOG3");
-    INFOLOGS(gs, "hello iLOG3");
-    WARNLOGS(gs, "hello iLOG3");
-    ERRORLOGS(gs, "hello iLOG3");
-    FATALLOGS(gs, "hello iLOG3");
+    DEBUGLOGSG("hello iLOG3");
+    INFOLOGSG("hello iLOG3");
+    WARNLOGSG("hello iLOG3");
+    ERRORLOGSG("hello iLOG3");
+    FATALLOGSG("hello iLOG3");
 
-    DEBUGHEXLOGS(gs, buffer, buflen, "缓冲区[%ld]", buflen);
-    INFOHEXLOGS(gs, buffer, buflen, "缓冲区[%ld]", buflen);
-    WARNHEXLOGS(gs, buffer, buflen, "缓冲区[%ld]", buflen);
-    ERRORHEXLOGS(gs, buffer, buflen, "缓冲区[%ld]", buflen);
-    FATALHEXLOGS(gs, buffer, buflen, "缓冲区[%ld]", buflen);
+    for (i = 0; i < buflen; i++)
+    {
+        buffer[i] = i;
+    }
+
+    DEBUGHEXLOGSG(buffer, buflen, "缓冲区[%ld]", buflen);
+    INFOHEXLOGSG(buffer, buflen, "缓冲区[%ld]", buflen);
+    WARNHEXLOGSG(buffer, buflen, "缓冲区[%ld]", buflen);
+    ERRORHEXLOGSG(buffer, buflen, "缓冲区[%ld]", buflen);
+    FATALHEXLOGSG(buffer, buflen, "缓冲区[%ld]", buflen);
 
     DestroyLogHandle(RemoveOutLogFromLogs(gs, "FILE"));
     printf("销毁日志句柄\n");
