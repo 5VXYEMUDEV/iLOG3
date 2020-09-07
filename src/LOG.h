@@ -558,6 +558,7 @@ _WINDLL_FUNC long MemcatLogBuffer( LOG *g , LOGBUF *logbuf , char *append , long
 #define format_log_buffer_v	FormatLogBufferV
 #define memcat_log_buffer	MemcatLogBuffer
 
+
 /* 日志缓冲区结构 */ /* log buffer structure */
 struct tagLOGBUF
 {

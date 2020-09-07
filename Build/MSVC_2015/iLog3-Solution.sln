@@ -6,8 +6,13 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Win32", "Win32", "{68A22E4D-8446-4050-A4F0-D8D11960054E}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "iLog3-Verification", "Win32\iLog3-Verification\iLog3-Verification.vcxproj", "{247EBEA1-6767-45F0-95CE-6767DFC90E68}"
+	ProjectSection(ProjectDependencies) = postProject
+		{F85A7789-826B-44A9-A92D-3B32D8FE1C0F} = {F85A7789-826B-44A9-A92D-3B32D8FE1C0F}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "iLog3-StaticLib", "Win32\iLog3-StaticLib\iLog3-StaticLib.vcxproj", "{F85A7789-826B-44A9-A92D-3B32D8FE1C0F}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "iLog3-DynamicLib", "Win32\iLog3-DynamicLib\iLog3-DynamicLib.vcxproj", "{11E40234-00CF-4BD2-BB1B-B5087ADC7A07}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +38,14 @@ Global
 		{F85A7789-826B-44A9-A92D-3B32D8FE1C0F}.Release|x64.Build.0 = Release|x64
 		{F85A7789-826B-44A9-A92D-3B32D8FE1C0F}.Release|x86.ActiveCfg = Release|Win32
 		{F85A7789-826B-44A9-A92D-3B32D8FE1C0F}.Release|x86.Build.0 = Release|Win32
+		{11E40234-00CF-4BD2-BB1B-B5087ADC7A07}.Debug|x64.ActiveCfg = Debug|x64
+		{11E40234-00CF-4BD2-BB1B-B5087ADC7A07}.Debug|x64.Build.0 = Debug|x64
+		{11E40234-00CF-4BD2-BB1B-B5087ADC7A07}.Debug|x86.ActiveCfg = Debug|Win32
+		{11E40234-00CF-4BD2-BB1B-B5087ADC7A07}.Debug|x86.Build.0 = Debug|Win32
+		{11E40234-00CF-4BD2-BB1B-B5087ADC7A07}.Release|x64.ActiveCfg = Release|x64
+		{11E40234-00CF-4BD2-BB1B-B5087ADC7A07}.Release|x64.Build.0 = Release|x64
+		{11E40234-00CF-4BD2-BB1B-B5087ADC7A07}.Release|x86.ActiveCfg = Release|Win32
+		{11E40234-00CF-4BD2-BB1B-B5087ADC7A07}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -40,5 +53,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{247EBEA1-6767-45F0-95CE-6767DFC90E68} = {68A22E4D-8446-4050-A4F0-D8D11960054E}
 		{F85A7789-826B-44A9-A92D-3B32D8FE1C0F} = {68A22E4D-8446-4050-A4F0-D8D11960054E}
+		{11E40234-00CF-4BD2-BB1B-B5087ADC7A07} = {68A22E4D-8446-4050-A4F0-D8D11960054E}
 	EndGlobalSection
 EndGlobal
