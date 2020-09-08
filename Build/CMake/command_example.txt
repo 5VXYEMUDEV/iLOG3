@@ -1,0 +1,13 @@
+cmake -G "Visual Studio 14 2015 Win64" ..
+cmake --build .
+
+cmake .
+make
+
+sudo cp *.h /usr/local/include/iLog3/
+sudo cp libiLog3.so /usr/local/lib/iLog3
+
+git clean -df
+
+YapingXin-Aerospace
+
