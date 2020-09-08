@@ -42,7 +42,7 @@ SET ( SRC_LIST_iLog3_LIB
 )
 
 MESSAGE(STATUS "Compile ...")
-add_library( iLog3 STATIC ${SRC_LIST_iLog3_LIB} )
+add_library( iLog3 SHARED ${SRC_LIST_iLog3_LIB} )
 
 MESSAGE(STATUS "")
 MESSAGE(STATUS "=========================================================")
