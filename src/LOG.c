@@ -14,6 +14,8 @@
 #ifndef _WINDLL_FUNC
 #define _WINDLL_FUNC
 #endif
+#include <syslog.h>
+#include <stdio.h>
 #endif
 
 #include "LOG.h"
