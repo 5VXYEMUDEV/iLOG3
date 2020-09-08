@@ -525,7 +525,7 @@ static int WriteLog_syslog( LOG *g , void **open_handle , int log_level , char *
 		syslog_log_level = LOG_EMERG ;
 	else
 		syslog_log_level = LOG_ALERT ;
-	syslog( syslog_log_level , buf );
+	syslog( syslog_log_level , "%s", buf );
 	(*writelen) = len ;
 	
 	return 0;
