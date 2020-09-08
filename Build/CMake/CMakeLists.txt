@@ -25,11 +25,17 @@ ENDIF (CMAKE_SYSTEM_NAME MATCHES "Linux")
 INCLUDE_DIRECTORIES(
     ../../Code
     ../../src
+    /usr/local/lib/iLog3
 )
+
+LINK_DIRECTORIES(
+        # glib-2.0, gio and mxml
+        /usr/local/lib/iLog3
+    )
 
 MESSAGE(STATUS "")
 MESSAGE(STATUS "=========================================================")
-MESSAGE(STATUS "| Target iLog3 Dynamic Library       (EXECUTABLE) BEGIN |")
+MESSAGE(STATUS "| Target iLog3 Dynamic Library       (SHARED LIB) BEGIN |")
 MESSAGE(STATUS "=========================================================")
 MESSAGE(STATUS "")
 
@@ -46,6 +52,34 @@ add_library( iLog3 SHARED ${SRC_LIST_iLog3_LIB} )
 
 MESSAGE(STATUS "")
 MESSAGE(STATUS "=========================================================")
-MESSAGE(STATUS "| Target iLog3 Dynamic Library       (EXECUTABLE) END   |")
+MESSAGE(STATUS "| Target iLog3 Dynamic Library       (SHARED LIB) END   |")
+MESSAGE(STATUS "=========================================================")
+MESSAGE(STATUS "")
+
+MESSAGE(STATUS "")
+MESSAGE(STATUS "=========================================================")
+MESSAGE(STATUS "| Target iLog3-Verification          (EXECUTABLE) BEGIN |")
+MESSAGE(STATUS "=========================================================")
+MESSAGE(STATUS "")
+
+SET ( SRC_LIST_iLog3_Verification
+
+    ../../Code/Utilities/iLog3-Verification/iLog3-Verification.c
+    ../../Code/Utilities/iLog3-Verification/TEST_hello.c
+    ../../Code/Utilities/iLog3-Verification/TEST_hello2.c
+    ../../Code/Utilities/iLog3-Verification/TEST_logs.c
+
+)
+
+MESSAGE(STATUS "Compile ...")
+ADD_EXECUTABLE( iLog3-Verification ${SRC_LIST_iLog3_Verification} )
+
+MESSAGE(STATUS "Link ...")
+TARGET_LINK_LIBRARIES( iLog3-Verification iLog3)
+
+
+MESSAGE(STATUS "")
+MESSAGE(STATUS "=========================================================")
+MESSAGE(STATUS "| Target iLog3-Verification          (EXECUTABLE) END   |")
 MESSAGE(STATUS "=========================================================")
 MESSAGE(STATUS "")
